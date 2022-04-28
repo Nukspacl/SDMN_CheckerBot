@@ -61,17 +61,19 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             $last = substr(md5(mt_rand()), 0, 7);
         
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://m.stripe.com/6');
+            curl_setopt($ch, CURLOPT_URL, 'https://payments.braintree-api.com/graphql');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, 1);
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Host: m.stripe.com',
+            'Host: payments.braintree-api.com',
             'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36',
             'Accept: */*',
             'Accept-Language: en-US,en;q=0.5',
             'Content-Type: text/plain;charset=UTF-8',
-            'Origin: https://m.stripe.network',
-            'Referer: https://m.stripe.network/inner.html'));
+            'Origin: https://assets.braintreegateway.com',
+            'Referer: https://assets.braintreegateway.com/'));
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -132,16 +134,16 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             }
             
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+            curl_setopt($ch, CURLOPT_URL, 'https://payments.braintree-api.com/graphql');
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-              'Host: api.stripe.com',
+              'Host: payments.braintree-api.com',
               'Accept: application/json',
               'Accept-Language: en-US,en;q=0.9',
               'Content-Type: application/x-www-form-urlencoded',
-              'Origin: https://js.stripe.com',
-              'Referer: https://js.stripe.com/',
+              'Origin: https://assets.braintreegateway.com',
+              'Referer: https://assets.braintreegateway.com/',
               'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'));
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
