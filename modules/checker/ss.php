@@ -68,7 +68,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             'Accept-Language: en-US,en;q=0.5',
             'Content-Type: text/plain;charset=UTF-8',
             'Origin: https://m.stripe.network',
-            'Referer: https://m.stripe.network/inner.html'));
+            'Referer: https://m.stripe.network/'));
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -129,7 +129,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             }
             
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+            curl_setopt($ch, CURLOPT_URL, 'https://m.stripe.com/6');
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -137,8 +137,8 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
               'Accept: application/json',
               'Accept-Language: en-US,en;q=0.9',
               'Content-Type: application/x-www-form-urlencoded',
-              'Origin: https://js.stripe.com',
-              'Referer: https://js.stripe.com/',
+              'Origin: https://m.stripe.network',
+              'Referer: https://m.stripe.network/',
               'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'));
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -159,7 +159,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             if(!$stripeerror){
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://user.atlasvpn.com/v1/stripe/pay');
+                curl_setopt($ch, CURLOPT_URL, 'https://js.stripe.com/v3/elements-inner-card-eae2ed0ad4e9dbe70476959915ee9dde.html');
                 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -169,9 +169,8 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                   'Accept: application/json, text/plain, */*',
                   'Accept-Language: en-US,en;q=0.9',
                   'content-type: application/json;charset=UTF-8',
-                  'Host: user.atlasvpn.com',
-                  'Origin: https://atlasvpn.com',
-                  'Referer: https://atlasvpn.com/',
+                  'Host: js.stripe.com',
+                  'Referer: https://www.ziegenheinfuneralhome.com/',
                   'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'));
                 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
                 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
